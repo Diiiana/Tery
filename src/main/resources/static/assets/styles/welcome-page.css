@@ -1,0 +1,56 @@
+html {
+    font-family: "Verdana", cursive;
+    font-size: 18px;
+}
+
+.welcome-page {
+    background-color: cornflowerblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+.welcome-div {
+    text-align: center;
+    background: whitesmoke;
+    width: 60%;
+    height: 80%;
+    padding: 5vh;
+    border-radius: 1vh;
+    margin-top: 20vh;
+}
+
+#sign-in-button {
+    padding: 1vh;
+    width: 12vh;
+    border: none;
+    cursor: pointer;
+    border-radius: 1vh;
+    background-color: whitesmoke;
+}
+
+#sign-in-button:hover {
+    color: whitesmoke;
+    background-color: #6868ef;
+}
+
+#sign-up-button:hover {
+    color: black;
+    background-color: whitesmoke;
+}
+
+#sign-up-button {
+    padding: 1vh;
+    width: 12vh;
+    border: none;
+    cursor: pointer;
+    color: whitesmoke;
+    border-radius: 1vh;
+    background-color: #6868ef;
+}
+
+a, u {
+    text-decoration: none;
+}

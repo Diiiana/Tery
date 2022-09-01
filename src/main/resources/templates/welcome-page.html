@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Tery</title>
-    <link rel="stylesheet" th:href="@{/assets/css/welcome-page.css}"/>
+    <link rel="stylesheet" th:href="@{/assets/styles/welcome-page.css}"/>
 </head>
-<body>
-
+<body class="welcome-page">
+<div class="welcome-div">
+    <h2>Welcome to Trey!</h2>
+    <div>
+        <a id="sign-in-button" href="/login">SIGN IN</a>
+        <a id="sign-up-button" href="/signup">SIGN UP</a>
+    </div>
+</div>
 </body>
 </html>

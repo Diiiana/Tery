@@ -1,0 +1,13 @@
+package com.du.tery.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class SignUpController {
+
+    @GetMapping("/signup")
+    public String displayLoginPage() {
+        return "sign-up-page.html";
+    }
+}

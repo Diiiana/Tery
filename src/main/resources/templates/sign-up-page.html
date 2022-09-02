@@ -6,7 +6,19 @@
     <link rel="stylesheet" th:href="@{/assets/styles/sign-up-page.css}"/>
 </head>
 <body class="sign-up-page">
-<p style="text-align: center; padding-bottom: 3vh; font-size: 22px">Sign Up</p>
+<div id="sign-up-form">
+    <p style="text-align: center; padding-bottom: 3vh; font-size: 22px">Sign Up</p>
+    <form th:action="@{/signup}" method="post">
+        <input type="text" name="username" id="username" placeholder="Username"/>
+        <input type="email" name="email" id="email" placeholder="Email Address"/>
+        <input type="password" name="password" id="password" placeholder="Password"/>
+        <input type="submit" value="SIGN UP"/>
+    </form>
+
+    <div style="width: 57vh; margin: 3vh">
+        <a style="float: right" href="login">Already registered?</a>
+    </div>
+</div>
 </div>
 </body>
 </html>

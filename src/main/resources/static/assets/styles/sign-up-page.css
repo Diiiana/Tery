@@ -11,3 +11,49 @@ html {
     width: 100%;
     overflow: hidden;
 }
+
+#sign-up-form {
+    background-color: white;
+    width: 60vh;
+    height: 55vh;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 5px;
+    padding: 10vh 20px 0 20px;
+    margin-top: 15vh;
+}
+
+input[type=text], input[type=email], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 1vh 0;
+    border-radius: 1vh;
+    box-sizing: border-box;
+    border: 1px solid gray;
+}
+
+input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 1vh 0;
+    border-radius: 1vh;
+    box-sizing: border-box;
+    border: 1px solid gray;
+}
+
+input[type=submit]:hover {
+    color: white;
+    background-color: cornflowerblue;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: white;
+    color: black;
+    padding: 2vh 2vh;
+    margin: 1vh 0;
+    border: none;
+    border-radius: 1vh;
+    cursor: pointer;
+}

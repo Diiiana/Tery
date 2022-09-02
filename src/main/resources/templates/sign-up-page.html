@@ -9,9 +9,9 @@
 <div id="sign-up-form">
     <p style="text-align: center; padding-bottom: 3vh; font-size: 22px">Sign Up</p>
     <form th:action="@{/signup}" method="post">
-        <input type="text" name="username" id="username" placeholder="Username"/>
-        <input type="email" name="email" id="email" placeholder="Email Address"/>
-        <input type="password" name="password" id="password" placeholder="Password"/>
+        <input type="text" name="username" id="username" placeholder="Username" required/>
+        <input type="email" name="email" id="email" placeholder="Email Address" required/>
+        <input type="password" name="password" id="password" placeholder="Password" required/>
         <input type="submit" value="SIGN UP"/>
     </form>
 

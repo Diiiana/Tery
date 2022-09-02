@@ -1,5 +1,6 @@
 package com.du.tery.controllers;
 
+import com.du.tery.dtos.UserAccountDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -18,9 +19,8 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public String authenticateUser(@ModelAttribute("username") String username,
-                                   @ModelAttribute("password") String password) {
-        logger.info("User: " + username + " with " + password + " logging in.");
+    public String authenticateUser(@ModelAttribute("userAccount") UserAccountDto userAccountDto) {
+        logger.info("User: " + userAccountDto + " logging in.");
         return "welcome-page.html";
     }
 }

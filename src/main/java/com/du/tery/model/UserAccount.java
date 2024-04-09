@@ -20,6 +20,14 @@ public class UserAccount {
     @Column(unique = true)
     private String username;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "user_role")
     private UserRole userRole;
+
+    @NotNull
+    @Column(unique = true)
+    private String email;
+
+    @NotNull
+    private String password;
 }

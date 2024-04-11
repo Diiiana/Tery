@@ -10,4 +10,14 @@ public class WelcomeController {
     public String displayWelcomePage() {
         return "welcome-page.html";
     }
+
+    @GetMapping({"/login"})
+    public String displayLoginPage() {
+        return "login-page.html";
+    }
+
+    @GetMapping({"/signup"})
+    public String displaySignUpPage() {
+        return "sign-up-page.html";
+    }
 }

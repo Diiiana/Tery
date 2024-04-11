@@ -11,12 +11,12 @@ public class WelcomeController {
         return "welcome-page.html";
     }
 
-    @GetMapping({"/login"})
+    @GetMapping("/login")
     public String displayLoginPage() {
         return "login-page.html";
     }
 
-    @GetMapping({"/signup"})
+    @GetMapping("/signup")
     public String displaySignUpPage() {
         return "sign-up-page.html";
     }

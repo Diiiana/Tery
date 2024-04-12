@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Users</title>
+    <link rel="stylesheet" th:href="@{/assets/styles/users-page.css}"/>
 </head>
 <body class="users-page">
-<div th:if="${usersAccounts != null and !usersAccounts.isEmpty()}">
-    <p th:each="user : ${usersAccounts}">
-        <span th:text="${user.username} + ' ' + ${user.email}"/>
-    </p>
+<div class="center-element">
+    <h1>User accounts</h1>
+</div>
+<div class="center-element">
+    <div th:if="${usersAccounts != null and !usersAccounts.isEmpty()}">
+        <p th:each="user : ${usersAccounts}">
+            <span th:text="${user.username} + ' ' + ${user.email}"/>
+        </p>
+    </div>
 </div>
 </body>
 </html>

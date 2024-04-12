@@ -1,0 +1,7 @@
+@import "common-styles.css";
+
+.users-page {
+    background-color: rgb(200, 219, 255);
+    width: 100%;
+    overflow: hidden;
+}

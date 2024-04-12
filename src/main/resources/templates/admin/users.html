@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body class="users-page">
+<div th:if="${usersAccounts != null and !usersAccounts.isEmpty()}">
+    <p th:each="user : ${usersAccounts}">
+        <span th:text="${user.username} + ' ' + ${user.email}"/>
+    </p>
+</div>
+</body>
+</html>

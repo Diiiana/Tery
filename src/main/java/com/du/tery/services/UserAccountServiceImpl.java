@@ -25,6 +25,16 @@ public class UserAccountServiceImpl implements UserAccountService {
     }
 
     @Override
+    public UserAccountDto findUser(UserAccountDto userAccountDto) {
+        UserAccount userAccount = userAccountRepository.findUserAccountByEmailOrUsername(userAccountDto.getEmail(),
+                userAccountDto.getUsername());
+        if (userAccount == null) {
+            return null;
+        }
+        return modelMapper.map(userAccount, UserAccountDto.class);
+    }
+
+    @Override
     public List<UserAccountDto> getAllUsers() {
         List<UserAccount> users = userAccountRepository.findAll();
         return users.stream()
@@ -39,5 +49,10 @@ public class UserAccountServiceImpl implements UserAccountService {
         userAccount = userAccountRepository.save(userAccount);
         modelMapper.map(userAccount, userAccountDto);
         return userAccountDto;
+    }
+
+    @Override
+    public UserAccountDto authenticateUser(UserAccountDto userAccountDto) {
+        return findUser(userAccountDto);
     }
 }

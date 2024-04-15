@@ -35,7 +35,7 @@ public class UserController {
         if (userAccountService.authenticateUser(userAccountDto) != null) {
             return "welcome-page.html";
         }
-        model.addAttribute("message", "Unable to authenticate.");
-        return "error-page.html";
+        model.addAttribute("loginErrorMessage", "Unable to authenticate.");
+        return "login-page.html";
     }
 }

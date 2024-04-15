@@ -15,13 +15,14 @@ html {
 #login-form {
     background-color: white;
     width: 60vh;
-    height: 50vh;
+    height: auto;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     border-radius: 5px;
     padding: 10vh 20px 0 20px;
-    margin-top: 15vh;
+    margin-top: 5%;
+    padding-bottom: 5vh;
 }
 
 input[type=text], select {

@@ -1,6 +1,5 @@
 package com.du.tery.dtos;
 
-import com.du.tery.enums.UserRole;
 import lombok.*;
 
 import java.util.UUID;
@@ -15,7 +14,7 @@ public class UserAccountDto {
 
     @NonNull
     private String username;
-    private UserRole userRole;
+    private String userRole;
 
     @NonNull
     private String email;

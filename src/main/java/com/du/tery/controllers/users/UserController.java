@@ -1,6 +1,7 @@
 package com.du.tery.controllers.users;
 
 import com.du.tery.dtos.UserAccountDto;
+import com.du.tery.enums.UserRole;
 import com.du.tery.facade.UserAccountService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,8 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+
+import java.util.Objects;
 
 @Controller
 @Slf4j
@@ -33,7 +36,9 @@ public class UserController {
     public String authenticateUser(Model model, @ModelAttribute("userAccountDto") UserAccountDto userAccountDto) {
         log.info("User: " + userAccountDto + " logging in.");
         if (userAccountService.authenticateUser(userAccountDto) != null) {
-            return "welcome-page.html";
+            if (Objects.equals(userAccountDto.getUserRole(), UserRole.ADMIN_ROLE)) {
+                return "admin-page.html";
+            } else return "welcome-page.html";
         }
         model.addAttribute("loginErrorMessage", "Unable to authenticate.");
         return "login-page.html";

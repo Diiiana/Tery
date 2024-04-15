@@ -2,9 +2,9 @@ package com.du.tery.services;
 
 import com.du.tery.dtos.UserAccountDto;
 import com.du.tery.facade.UserAccountService;
+import com.du.tery.mappers.UserAccountMapper;
 import com.du.tery.model.UserAccount;
 import com.du.tery.repositories.UserAccountRepository;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +17,7 @@ public class UserAccountServiceImpl implements UserAccountService {
     private final UserAccountRepository userAccountRepository;
 
     @Autowired
-    private ModelMapper modelMapper;
+    private UserAccountMapper userAccountMapper;
 
     @Autowired
     public UserAccountServiceImpl(UserAccountRepository userAccountRepository) {
@@ -31,24 +31,22 @@ public class UserAccountServiceImpl implements UserAccountService {
         if (userAccount == null) {
             return null;
         }
-        return modelMapper.map(userAccount, UserAccountDto.class);
+        return userAccountMapper.userAccountToUserAccountDto(userAccount);
     }
 
     @Override
     public List<UserAccountDto> getAllUsers() {
         List<UserAccount> users = userAccountRepository.findAll();
         return users.stream()
-                .map(u -> modelMapper.map(u, UserAccountDto.class))
+                .map(u -> userAccountMapper.userAccountToUserAccountDto(u))
                 .collect(Collectors.toList());
     }
 
     @Override
     public UserAccountDto saveUser(UserAccountDto userAccountDto) {
-        UserAccount userAccount = new UserAccount();
-        modelMapper.map(userAccountDto, userAccount);
+        UserAccount userAccount = userAccountMapper.userAccountDtoToUserAccount(userAccountDto);
         userAccount = userAccountRepository.save(userAccount);
-        modelMapper.map(userAccount, userAccountDto);
-        return userAccountDto;
+        return userAccountMapper.userAccountToUserAccountDto(userAccount);
     }
 
     @Override

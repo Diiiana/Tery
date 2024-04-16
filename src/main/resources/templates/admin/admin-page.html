@@ -3,16 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Admin</title>
-    <link rel="stylesheet" th:href="@{/assets/styles/users-page.css}"/>
 </head>
 <body class="users-page">
 <div class="center-element">
     <h1>Admin page</h1>
 </div>
 <div class="center-element">
-    <form action="/users" method="get">
-        <button>View users</button>
-    </form>
+    <h1>Welcome back!</h1>
+    <button th:action="@{/users}">Users</button>
 </div>
 </body>
 </html>

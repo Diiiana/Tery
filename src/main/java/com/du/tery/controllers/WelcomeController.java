@@ -11,6 +11,7 @@ public class WelcomeController {
         return "welcome-page.html";
     }
 
+//    @PreAuthorize("hasRole('USER_ROLE')")
     @GetMapping("/login")
     public String displayLoginPage() {
         return "login-page.html";

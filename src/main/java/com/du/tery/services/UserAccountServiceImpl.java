@@ -51,6 +51,10 @@ public class UserAccountServiceImpl implements UserAccountService {
 
     @Override
     public UserAccountDto authenticateUser(UserAccountDto userAccountDto) {
-        return findUser(userAccountDto);
+        UserAccountDto foundUser = findUser(userAccountDto);
+        if (foundUser != null && foundUser.getPassword().equals(userAccountDto.getPassword())) {
+            return foundUser;
+        }
+        return null;
     }
 }

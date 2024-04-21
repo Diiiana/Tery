@@ -34,7 +34,7 @@ public class UserController {
 
     @PostMapping("/login")
     public String authenticateUser(Model model, @ModelAttribute("userAccountDto") UserAccountDto userAccountDto) {
-        log.info("User: " + userAccountDto + " logging in.");
+        log.info("User: {} logging in.", userAccountDto);
         if (userAccountService.authenticateUser(userAccountDto) != null) {
             if (Objects.equals(userAccountDto.getUserRole(), UserRole.ADMIN_ROLE)) {
                 return "admin-page.html";

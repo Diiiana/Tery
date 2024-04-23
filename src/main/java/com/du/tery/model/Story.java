@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
-import java.util.UUID;
 
 @Data
 @NoArgsConstructor
@@ -16,7 +15,7 @@ public class Story {
     @Id
     @GeneratedValue
     @Column(name = "STORY_ID")
-    private UUID id;
+    private Long id;
 
     @Column(name = "TITLE")
     private String title;

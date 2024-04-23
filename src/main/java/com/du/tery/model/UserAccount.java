@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Set;
-import java.util.UUID;
 
 @Data
 @NoArgsConstructor
@@ -16,7 +15,7 @@ public class UserAccount {
     @Id
     @GeneratedValue
     @Column(name = "USER_ACCOUNT_ID")
-    private UUID userAccountId;
+    private Long userAccountId;
 
     @Column(name = "USERNAME", unique = true)
     private String username;

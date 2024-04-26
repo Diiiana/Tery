@@ -1,0 +1,15 @@
+@import "common-styles.css";
+
+html {
+    font-family: "Verdana", cursive;
+    font-size: 15px;
+    background-color: cornflowerblue;
+}
+
+.main-panel {
+    background: white;
+    text-align: center;
+    border-radius: 10px;
+    width: 60vw !important;
+    height: 80vh !important;
+}

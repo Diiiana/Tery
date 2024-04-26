@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Tery</title>
-    <link rel="stylesheet" th:href="@{/assets/styles/login-page.css}"/>
+    <link rel="stylesheet" th:href="@{/assets/styles/story-page.css}"/>
 </head>
-<body class="story-page">
-
+<body class="story-page center-element">
+    <div class="main-panel">
+        <p th:text="${story.getTitle()}"></p>
+        <div>
+            <p th:text="${story.getText()}"></p>
+        </div>
+    </div>
 </body>
 </html>

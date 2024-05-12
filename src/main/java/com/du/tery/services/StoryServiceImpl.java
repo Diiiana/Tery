@@ -8,6 +8,9 @@ import com.du.tery.repositories.StoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class StoryServiceImpl implements StoryService {
 
@@ -24,6 +27,14 @@ public class StoryServiceImpl implements StoryService {
     public StoryDto getStoryById(Long id) {
         Story story = findStoryById(id);
         return storyMapper.storyToStoryDto(story);
+    }
+
+    @Override
+    public List<StoryDto> getStories() {
+        return storyRepository.findAll()
+                .stream()
+                .map(s -> storyMapper.storyToStoryDto(s))
+                .collect(Collectors.toList());
     }
 
     private Story findStoryById(Long id) {

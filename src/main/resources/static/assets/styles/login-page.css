@@ -1,7 +1,4 @@
-html {
-    font-family: "Verdana", cursive;
-    font-size: 15px;
-}
+@import "common-styles.css";
 
 .login-page {
     background-color: cornflowerblue;

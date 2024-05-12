@@ -22,4 +22,10 @@ public class StoryController {
         model.addAttribute("story", storyService.getStoryById(id));
         return "story/story-page.html";
     }
+
+    @GetMapping("/stories")
+    public String getStories(Model model) {
+        model.addAttribute("stories", storyService.getStories());
+        return "story/all.html";
+    }
 }

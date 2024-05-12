@@ -1,3 +1,9 @@
+html {
+    font-family: "Verdana", cursive;
+    font-size: 15px;
+    background-color: cornflowerblue;
+}
+
 .center-element {
     display: flex;
     justify-content: center;

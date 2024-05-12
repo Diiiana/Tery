@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tery</title>
+    <link rel="stylesheet" th:href="@{/assets/styles/story-page.css}"/>
+</head>
+<body>
+<div class="card-container">
+    <div class="card" th:each="story : ${stories}">
+        <p class="card-text center-element" th:text="${story.title}"></p>
+        <p class="card-text" th:text="${story.text}"></p>
+    </div>
+</div>
+</body>
+</html>

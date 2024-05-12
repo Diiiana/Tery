@@ -1,7 +1,4 @@
-html {
-    font-family: "Verdana", cursive;
-    font-size: 18px;
-}
+@import "common-styles.css";
 
 .welcome-page {
     background-color: cornflowerblue;
